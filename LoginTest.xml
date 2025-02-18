@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Sign in Suite">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+    <test name = "Login.TC_UserLogin">
+        <classes>
+            <class name = "Login.TC_UserLogin"/>
+        </classes>
+    </test>
+</suite>
