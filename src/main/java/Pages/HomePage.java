@@ -14,6 +14,7 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
+
     @FindBy(xpath = "//a[@id='homeMegaMenu']")
     WebElement Extentions_loc;
     @FindBy(xpath = "//a[normalize-space()='Shopify Apps']")
@@ -30,8 +31,14 @@ public class HomePage {
     WebElement SearchBtn_loc;
     @FindBy (xpath = "//a[@id='sidebarNavToggler']")
     WebElement AccountButton_loc;
+    @FindBy(xpath = "//input[@id='search-input']")
+    WebElement SearchBox_loc;
     @FindBy (xpath = "//a[@id='shoppingCartDropdownInvoker']")
     WebElement CartBtn_loc;
+    @FindBy(xpath = "//a[@id='check-out-now']")
+    WebElement checkOutBtn_loc;
+    @FindBy(xpath = "//a[@id='contact-us']")
+    WebElement ContactUsBtn_loc;
 
 
     @FindBy(xpath = "//span[contains(.,'Shop now')]")
@@ -56,6 +63,9 @@ public class HomePage {
     WebElement ViewBlog_loc;
     @FindBy(xpath = "//input[@id='subcribe_email2']")
     WebElement Email_loc;
+    @FindBy(xpath = "//i[@id='m2-customer-attributes']")
+    WebElement RemoveFromCart_loc;
+
 
     public void ClickExtentions(){
         Extentions_loc.click();
@@ -82,12 +92,13 @@ public class HomePage {
     public void ClickCart(){
         CartBtn_loc.click();
     }
-
-        public void ClickSearchBtn(){
-        SearchBtn_loc.click();
+    public void ClickContactUs(){
+        ContactUsBtn_loc.click();
     }
 
-
+    public void ClickSearchBtn(){
+        SearchBtn_loc.click();
+    }
     public void ClickShopNow(){
         ShopNowBtn_loc.click();
     }
@@ -120,7 +131,15 @@ public class HomePage {
     }
     public void setEmail(String email){
         Email_loc.sendKeys(email + Keys.ENTER);
-
+    }
+    public void setSearchBox(String Keyword){
+        SearchBox_loc.sendKeys(Keyword + Keys.ENTER);
+    }
+    public void RemoveFromCart(){
+        RemoveFromCart_loc.click();
+    }
+    public void ClickCheckoutBtn(){
+        checkOutBtn_loc.click();
     }
 
 
