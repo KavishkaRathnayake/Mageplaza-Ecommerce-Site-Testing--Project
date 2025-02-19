@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "Search Suit">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+    <test name = "TC_Search_01">
+        <classes>
+            <class name = "Search.TC_Search_01"/>
+        </classes>
+    </test>
+
+    <test name = "TC_Search_02">
+        <classes>
+            <class name = "Search.TC_Search_02"/>
+        </classes>
+    </test>
+
+    <test name = "TC_Search_03">
+        <classes>
+            <class name = "Search.TC_Search_03"/>
+        </classes>
+    </test>
+
+    <test name = "TC_Search_04">
+        <classes>
+            <class name = "Search.TC_Search_04"/>
+        </classes>
+    </test>
+
+    <test name = "TC_Search_05">
+        <classes>
+            <class name = "Search.TC_Search_05"/>
+        </classes>
+    </test>
+</suite>
