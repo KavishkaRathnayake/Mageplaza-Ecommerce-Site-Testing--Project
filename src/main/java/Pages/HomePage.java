@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.Set;
+
 public class HomePage {
     WebDriver driver;
 
@@ -72,6 +74,7 @@ public class HomePage {
     }
     public void ClickShopifyapps(){
         ShopifyApps_loc.click();
+
     }
     public void ClickEcomservises(){
         EcomServices_loc.click();
@@ -95,7 +98,6 @@ public class HomePage {
     public void ClickContactUs(){
         ContactUsBtn_loc.click();
     }
-
     public void ClickSearchBtn(){
         SearchBtn_loc.click();
     }
@@ -141,8 +143,6 @@ public class HomePage {
     public void ClickCheckoutBtn(){
         checkOutBtn_loc.click();
     }
-
-
 }
 
 
