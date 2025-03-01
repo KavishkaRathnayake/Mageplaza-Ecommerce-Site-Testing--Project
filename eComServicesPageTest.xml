@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name = "ShopifyApps Page Suite">
+    <listeners>
+        <listener class-name="com.aventstack.extentreports.testng.listener.ExtentITestListenerClassAdapter"></listener>
+    </listeners>
+    <test name = "TC_EcomServices_01">
+        <classes>
+            <class name = "EComServicesPage.TC_EcomServices_01"/>
+        </classes>
+    </test>
+
+
+    <test name = "TC_EcomServices_02">
+        <classes>
+            <class name = "EComServicesPage.TC_EcomServices_02"/>
+        </classes>
+    </test>
+</suite>
