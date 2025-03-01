@@ -32,10 +32,35 @@ public class TC_EcomServices_02 {
         driver.get("https://www.mageplaza.com/");
     }
 
+    @DataProvider (name = "log")
+    public Object[][] getExcelData() throws IOException {
+
+        FileInputStream file = new FileInputStream(System.getProperty("user.dir") + "\\TestData\\ContactTestData.xlsx");
+        XSSFWorkbook workbook = new XSSFWorkbook(file);
+        XSSFSheet sheet = workbook.getSheet("Sheet1"); //work.getsheetAt(indexValue);
+        int totalRows = sheet.getLastRowNum();
+        int totalColumns = sheet.getRow(0).getLastCellNum();
+        System.out.println("total Rows Count: " + totalRows);
+        System.out.println("total Columns Count: " + totalColumns);
+
+        String[][] TestData = new String[totalRows][totalColumns];
+
+        for (int r = 1; r <= totalRows; r++) {
+            for (int c = 0; c < totalColumns; c++) {
+                TestData[r - 1][c] = sheet.getRow(r).getCell(c).toString();
+            }
+        }
+
+        workbook.close(); //close workbook
+        file.close(); //close file
+
+        return TestData;
+    }
 
 
-@Test
-    public void TC_EcomServices_02Test() throws AWTException {
+
+    @Test (dataProvider = "log")
+    public void TC_EcomServices_02Test(String first, String last, String email, String phone, String company) throws AWTException {
         HomePage homePage = new HomePage(driver);
         String OldWindow = driver.getWindowHandle();
         homePage.ClickEcomservises();
@@ -45,12 +70,12 @@ public class TC_EcomServices_02 {
         }
 
         EcomServicesPage ecomServicesPage = new EcomServicesPage(driver);
-        ecomServicesPage.EnterFirstname("kavi");
-        ecomServicesPage.EnterLastname("Rath");
-        ecomServicesPage.EnterEmail("Abx@Gmail.com");
-        ecomServicesPage.EnterCompanyName("Abc");
+        ecomServicesPage.EnterFirstname(first);
+        ecomServicesPage.EnterLastname(last);
+        ecomServicesPage.EnterEmail(email);
+        ecomServicesPage.EnterCompanyName(company);
         ecomServicesPage.EnterCountryCode("+94");
-        ecomServicesPage.EnterPhone("777834689");
+        ecomServicesPage.EnterPhone(phone);
         ecomServicesPage.SelectInteresrs();
 //       ecomServicesPage.EnterMessage("elnk");
         ecomServicesPage.FileUpload();
